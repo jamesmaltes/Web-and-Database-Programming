@@ -69,7 +69,6 @@ class User {
 
 
 //create a new User object using your User class/constructor 
-
 let regForm = document.getElementById("register-form"); 
 regForm.addEventListener('submit', createUser);
 
@@ -120,10 +119,10 @@ class loggedInUser {
 let loginForm = document.getElementById("login-form");
 loginForm.addEventListener('submit', addLogin);
 
-/*
-creates a new logged in user when login form is submitted
-(have to check if user already exists later)
-*/
+
+//creates a new logged in user when login form is submitted
+//(have to check if user already exists later)
+
 function addLogin(e) {
   e.preventDefault();
   let email = document.getElementById("email");
@@ -159,9 +158,9 @@ class Reservation {
 }
 
 
-//Reservation request
+//creates reservation when button is clicked
 let reservationForm = document.getElementById("reservation-form");
-reservationForm.addEventListener('submit', addReservation);
+reservationForm.addEventListener('button', addReservation);
 let reservationCount = 0; //default count of 0 for # of res
 
 function addReservation(e) {
