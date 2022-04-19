@@ -14,6 +14,7 @@ to the registration page where they can sign up.
 -checking to see if a user already exists
 */
 
+
 //User class w/ get and set methods
 class User {
     constructor(id, firstName, lastName, age, email, pswd) {
@@ -63,12 +64,12 @@ class User {
       }
 }
 
+// just a test
 // registrationArray = Array.from(document.querySelectorAll('#registration-form input')).reduce((acc, input) => ({ ...acc, [input.id]: input.value}), {});
 
-/* 
-When a user submits a form,
-create a new User object using your User class/constructor 
-*/
+
+//create a new User object using your User class/constructor 
+
 let regForm = document.getElementById("register-form"); 
 regForm.addEventListener('submit', createUser);
 
@@ -89,23 +90,34 @@ function createUser(e) {
 }
 
 
+//%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 //Logged in user class w/ get and set methods
 class loggedInUser {
-  constructor(email) {
+  constructor(email, pswd) {
     this.loggedInEmail = email;
+    this.loggedInPassword = pswd;
   }
 
+  //get methods
   getLoggedInEmail() {
     return this.loggedInEmail;
   }
+  getLoggedInPassword() {
+    return this.loggedInPassword;
+  }
 
+  //set methods
   setLoggedInEmail(email) {
     this.loggedInEmail = email;
+  }
+
+  setLoggedInPassword(pswd) {
+    this.loggedInPassword = pswd;
   }
 }
 
 //login form
-let loginForm = document.addEventListener("login-form");
+let loginForm = document.getElementById("login-form");
 loginForm.addEventListener('submit', addLogin);
 
 /*
@@ -115,9 +127,12 @@ creates a new logged in user when login form is submitted
 function addLogin(e) {
   e.preventDefault();
   let email = document.getElementById("email");
-  const newLoggedInUser = new loggedInUser(email);
+  let pswd = document.getElementById("pswd");
+  const newLoggedInUser = new loggedInUser(email, pswd);
+  console.log(newLoggedInUser);
 }
 
+//%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 //Reservation class w/ get and set methods
 class Reservation {
   constructor(id, date) {
@@ -156,8 +171,10 @@ function addReservation(e) {
   let id = 12345;
   let date = 4/18/2022; 
   const newRes = new Reservation()
+  console.log(newRes);
   reservationCount++;
 }
+
 
 /*
 *****WIP / TEST STUFF*****
