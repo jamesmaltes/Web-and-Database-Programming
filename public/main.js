@@ -160,7 +160,7 @@ class Reservation {
 
 //creates reservation when button is clicked
 let reservationForm = document.getElementById("reservation-form");
-reservationForm.addEventListener('button', addReservation);
+reservationForm.addEventListener('click', addReservation);
 let reservationCount = 0; //default count of 0 for # of res
 
 function addReservation(e) {
