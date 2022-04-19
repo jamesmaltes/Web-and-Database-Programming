@@ -5,13 +5,16 @@ Future ideas for website:
 they will be taken to the reservation page
 and be able to submit a reservation request.
 
--if their user doesn't exist, they will be taken 
-to the registration page where they can sign up.
+-if they are not logged in already, they will be taken 
+to the login page.
 
 -they must be signed in before they can reserve a spot.
 
 -check if registration / login information is valid
--checking to see if a user already exists
+-checking to see if a user with their information already exists
+-display error messages (user already exists, not logged in etc.)
+-increment id numbers for new users upon registration
+-increment reservation id numbers for reservation requests
 */
 
 
