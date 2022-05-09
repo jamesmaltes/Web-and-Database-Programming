@@ -15,6 +15,13 @@ to the login page.
 -display error messages (user already exists, not logged in etc.)
 -increment id numbers for new users upon registration
 -increment reservation id numbers for reservation requests
+
+-allow users to add a note to their cryochamber
+(similar to a gravestone message)
+
+This will turn the website into a notetaking website rather than 
+an e-commerce website
+
 */
 
 
