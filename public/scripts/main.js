@@ -30,6 +30,9 @@ class User {
     }
 
     //get methods
+
+
+    
     getUserId() {
       return this.userId;
     }
@@ -66,10 +69,6 @@ class User {
       this.userPassword = pswd;
       }
 }
-
-// just a test
-// registrationArray = Array.from(document.querySelectorAll('#registration-form input')).reduce((acc, input) => ({ ...acc, [input.id]: input.value}), {});
-
 
 //create a new User object using your User class/constructor 
 let regForm = document.getElementById("register-form"); 
@@ -132,6 +131,23 @@ function addLogin(e) {
   let pswd = document.getElementById("pswd");
   const newLoggedInUser = new loggedInUser(email, pswd);
   console.log(newLoggedInUser);
+}
+
+// Get Users function based on if user is logged in
+function getUsers() {
+  fetch("http://localhost:3000/users")
+  .then((res) => res.json())
+  .then((data) => {
+    let ul = document.getElementById("allUsers");
+    data.forEach((user) => {
+      let li = document.createElement('li');
+      let text = document.createTextNode(user.userName);
+      li.appendChild(text);
+      ul.appendChild(li);
+    })
+    console.log(data);
+  })
+  .catch((err) => console.log(`Error! ${err}`));
 }
 
 //%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
