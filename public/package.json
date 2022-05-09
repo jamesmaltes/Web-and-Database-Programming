@@ -4,8 +4,13 @@
   "description": "project for web and database programming",
   "main": "index.js",
   "scripts": {
+    "dev": "nodemon index.js”,
     "test": "echo \"Error: no test specified\" && exit 1"
   },
+  "keywords": [
+    "",
+    ""
+  ],
   "author": "James Maltes",
   "license": "ISC",
   "dependencies": {
