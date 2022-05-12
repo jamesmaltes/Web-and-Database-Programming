@@ -219,31 +219,3 @@ function addReservation(e) {
   console.log(newRes);
   reservationCount++;
 }
-
-
-/*
-*****WIP / TEST STUFF*****
-
-//to display current existing members - test based off followers example
-
-let memberSection = document.getElementById("members");
-
-document.getElementById("btn-members").addEventListener('click', getMembers);
-
-function getMembers(e) {
-  memberSection.innerText = "";
-  fetch('members.json') 
-  .then((res) => res.json())
-  .then((data) => {
-    memberSection.classList.toggle('hide')
-    data.forEach((member) => {
-      let user = document.createElement('div');
-      user.className = "member";
-      user.appendChild(document.createTextNode(member.firstName))
-      memberSection.appendChild(user);
-    });
-  })
-  .catch((err) => console.log(err));
-}
-
-*/
