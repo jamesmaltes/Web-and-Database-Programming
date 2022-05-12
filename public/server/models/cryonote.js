@@ -5,6 +5,7 @@ async function createTable() {
     note_id INT NOT NULL AUTO_INCREMENT,
     note_content VARCHAR(255) NOT NULL UNIQUE,
     CONSTRAINT note_pk PRIMARY KEY(note_id)
+    CONSTRAINT reservation_fk FOREIGN KEY(reservation_id) REFERENCES reservation(reservation_id)
   )`;
   await con.query(sql);
 }

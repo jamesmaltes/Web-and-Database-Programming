@@ -1,6 +1,6 @@
 import 
 { fetchData, getCurrentUser, setCurrentUser, removeCurrentUser } 
-from './main.js.js'
+from './main.js'
 
 const loginForm = document.getElementById("login-form");
 if(loginForm) loginForm.addEventListener('submit', login);

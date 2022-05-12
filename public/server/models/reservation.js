@@ -4,6 +4,7 @@ async function createTable() {
   let sql = `CREATE TABLE IF NOT EXISTS reservations (
     reservation_id INT NOT NULL AUTO_INCREMENT,
     CONSTRAINT reservation_pk PRIMARY KEY(reservation_id)
+    CONSTRAINT user_fk FOREIGN KEY(username) REFERENCES users(username)
   )`;
   await con.query(sql);
 }
