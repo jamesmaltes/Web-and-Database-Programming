@@ -62,8 +62,8 @@ if(getreservation()) {
   reservationForm.innerHTML = `
   <div>
     <p class="error"></p>
-    <button class="btn" id="add-note">Add a Note</button>
-    <button class="btn" id="delete-res">Delete Reservation</button>
+    <button class="btn" id="add-note">Add a Note to your Cryochamber</button>
+    <button class="btn" id="delete-res">Delete your Reservation</button>
   </div>
   `;
 }
