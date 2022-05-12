@@ -32,6 +32,12 @@ async function deleteReservation(reservationId) {
  
 }
 
+async function createReservation(reservationId) {
+  const sql = `INSERT INTO reservations (reservationId)
+    VALUES ("${reservation.reservationId}")
+  `
+}
+
 async function reservationExists(reservationId) {
   const sql = `SELECT * FROM reservations
     WHERE reservation_id = "${reservationId}"
@@ -40,4 +46,4 @@ async function reservationExists(reservationId) {
 }
 
 
-module.exports = { getreservations, deleteReservation, getreservation, createTable };
+module.exports = { getreservations, createReservation, deleteReservation, getreservation, createTable };

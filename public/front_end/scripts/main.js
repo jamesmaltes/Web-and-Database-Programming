@@ -20,9 +20,11 @@ to the login page.
 (similar to a gravestone message)
 
 This will turn the website into a notetaking website rather than 
-an e-commerce website
+a purely e-commerce website
 
 */
+
+import { getreservation } from "../../server/models/reservation";
 
 // if a user exists and is logged in, add the profile page and logout button to the nav
 // if user not logged in, remove the reservation page and add login button
@@ -45,7 +47,27 @@ if(getCurrentUser()) {
   `
 }
 
-// if a user has a submitted reservation, allow them to delete the reservation
+// if a user has a submitted reservation, allow them to view the reservation from nav bar
+const reservationForm = document.getElementById('reservation-form');
+if(getreservation()) {
+  nav.innerHTML = `
+  <ul>
+    <li><a href="home.html">Home</a></li>
+    <li><a id="logout">Logout</a></li>
+    <li><a href="reservation.html">View Reservation</a></li>
+  </ul>
+  `;
+
+  // changes reservation form to have buttons to add a note and delete a reservation
+  reservationForm.innerHTML = `
+  <div>
+    <p class="error"></p>
+    <button class="btn" id="add-note">Add a Note</button>
+    <button class="btn" id="delete-res">Delete Reservation</button>
+  </div>
+  `;
+}
+
 
 //User class w/ get and set methods
 class User {
@@ -207,7 +229,6 @@ class Reservation {
 
 
 //creates reservation when button is clicked
-let reservationForm = document.getElementById("reservation-form");
 reservationForm.addEventListener('click', addReservation);
 let reservationCount = 0; //default count of 0 for # of res
 
