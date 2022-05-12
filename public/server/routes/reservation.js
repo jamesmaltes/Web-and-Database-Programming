@@ -12,15 +12,6 @@ router
     }
   })
 
-  .post('/login', async (req, res) => {
-    try {
-      const reservation = await Reservation.login(req.body.reservationname, req.body.password);
-      res.send({...reservation, password: undefined});
-    } catch (error) {
-      res.status(401).send({message: error.message});
-    }
-  })
-
   .post('/register', async (req, res) => {
     try {
       const reservation = await Reservation.register(req.body);
@@ -37,16 +28,6 @@ router
       res.send({success: "Reservation deleted."});
     } catch(error) {
       res.status(401).send({message: error.message});
-    }
-  })
-
-  .put('/edit', async (req, res) => {
-    try {
-      const reservation = await Reservation.editReservation(req.body);
-      console.log(reservation)
-      res.send({...reservation, password: undefined});
-    } catch(error) {
-      res.status(401).send({message: error.message})
     }
   })
   

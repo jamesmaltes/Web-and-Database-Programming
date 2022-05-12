@@ -73,3 +73,51 @@ footer {
   width: 100%;
   margin-top: 10%;
 }
+
+/* == profile page ==================== */
+#profile {
+  border: 3px solid black;
+  width: fit-content;
+  border-radius: 10px;
+  margin: 30px auto;
+  padding: 30px 40px;
+  color: white;
+  background-color: blue;
+}
+
+#profile h2 {
+  padding-top: 20px;
+  text-align: center;
+}
+
+#profile div {
+  width: fit-content;
+  margin: 30px auto;
+}
+
+.btn {
+  background-color: black;
+  color: white;
+  font-size: 18px;
+  padding: 10px;
+  border-radius: 5px;
+  margin-top: 20px;
+  min-width: 150px;
+  border: none;
+}
+
+.btn:hover {
+  cursor: pointer;
+  color: black;
+  background-color: white;
+}
+
+#editForm {
+  width: fit-content;
+  margin: 40px auto;
+}
+
+#editForm form {
+  display: inline-block;
+  margin: 40px;
+}

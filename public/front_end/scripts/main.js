@@ -45,6 +45,8 @@ if(getCurrentUser()) {
   `
 }
 
+// if a user has a submitted reservation, allow them to delete the reservation
+
 //User class w/ get and set methods
 class User {
     constructor(id, firstName, lastName, age, email, pswd) {
