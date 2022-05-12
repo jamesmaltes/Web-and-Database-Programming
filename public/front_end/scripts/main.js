@@ -24,6 +24,26 @@ an e-commerce website
 
 */
 
+// if a user exists and is logged in, add the profile page and logout button to the nav
+// if user not logged in, remove the reservation page and add login button
+const nav = document.querySelector('nav');
+if(getCurrentUser()) {
+  nav.innerHTML = `
+  <ul>
+    <li><a href="home.html">Home</a></li>
+    <li><a id="logout">Logout</a></li>
+    <li><a href="reservation.html">Reserve a Spot</a></li>
+  </ul>
+  `;
+} else {
+  nav.innerHTML = `
+  <ul>
+    <li><a href="home.html">Home</a></li>
+    <li><a href="login.html">Login</a></li>
+    <li><a href="register.html">Register</a></li>
+  </ul>
+  `
+}
 
 //User class w/ get and set methods
 class User {
