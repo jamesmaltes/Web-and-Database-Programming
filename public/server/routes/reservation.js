@@ -12,11 +12,11 @@ router
     }
   })
 
-  .post('/register', async (req, res) => {
+  .post('/create', async (req, res) => {
     try {
       const reservation = await Reservation.register(req.body);
       console.log(reservation)
-      res.send({...reservation, password: undefined})
+      res.send({...reservation, reservationId: undefined})
     } catch(error) {
       res.status(401).send({message: error.message});
     }

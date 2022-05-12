@@ -3,6 +3,7 @@ const con = require("./db_connect");
 async function createTable() {
   let sql = `CREATE TABLE IF NOT EXISTS reservations (
     reservation_id INT NOT NULL AUTO_INCREMENT,
+    CONSTRAINT reservation_pk PRIMARY KEY(reservation_id)
   )`;
   await con.query(sql);
 }
@@ -33,7 +34,7 @@ async function deleteReservation(reservationId) {
 }
 
 async function createReservation(reservationId) {
-  const sql = `INSERT INTO reservations (reservationId)
+  const sql = `INSERT INTO reservations (reservation_id)
     VALUES ("${reservation.reservationId}")
   `
 }

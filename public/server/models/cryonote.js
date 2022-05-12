@@ -3,8 +3,8 @@ const con = require("./db_connect");
 async function createTable() {
   let sql = `CREATE TABLE IF NOT EXISTS notes (
     note_id INT NOT NULL AUTO_INCREMENT,
-    notecontent VARCHAR(255) NOT NULL UNIQUE,
-
+    note_content VARCHAR(255) NOT NULL UNIQUE,
+    CONSTRAINT note_pk PRIMARY KEY(note_id)
   )`;
   await con.query(sql);
 }
@@ -31,8 +31,8 @@ async function getNote(note) {
 }
 
 async function createNote(note) {
-  const sql = `INSERT INTO notes (notecontent)
-    VALUES ("${note.noteContent}")
+  const sql = `INSERT INTO notes (note_id, note_content)
+    VALUES ("${note.noteId}","${note.noteContent}")
   `;
 
   const insert = await con.query(sql);
@@ -48,16 +48,16 @@ async function deleteNote(noteId) {
  
 }
 
-async function noteExists(notecontent) {
+async function noteExists(noteContent) {
   const sql = `SELECT * FROM notes
-    WHERE notecontent = "${notecontent}"
+    WHERE note_content = "${noteContent}"
   `;
   return await con.query(sql);
 }
 
 async function editNote(note) {
   const sql = `UPDATE notes SET
-    notecontent = "${note.noteContent}"
+    note_content = "${note.noteContent}"
     WHERE note_id = ${note.noteId}
   `;
   const update = await con.query(sql);

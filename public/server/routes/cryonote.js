@@ -16,7 +16,7 @@ router
     try {
       const note = await Note.register(req.body);
       console.log(note)
-      res.send({...note, password: undefined})
+      res.send({...note, noteContent: undefined})
     } catch(error) {
       res.status(401).send({message: error.message});
     }
@@ -35,7 +35,7 @@ router
     try {
       const note = await Note.editNote(req.body);
       console.log(note)
-      res.send({...note, password: undefined});
+      res.send({...note, noteContent: undefined});
     } catch(error) {
       res.status(401).send({message: error.message})
     }
