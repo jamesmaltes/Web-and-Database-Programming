@@ -1,5 +1,14 @@
 For my project in Web and Database Programming, I want to make a website based on the sci-fi principle of cryonics,
 or the freezing of people after their death in the hopes that they can be revived sometime in the future.  This website 
 will allow people to sign up for an account and reserve a spot so that they can be frozen at the time of their death.  
-The database will keep track of people's information and the amount of available spots, as well as possibly allowing 
+The database will keep track of people's information, as well as possibly allowing 
 for public donations to the company.
+
+I have decided to change the app to create a "reservation" as a sort of log to indicate 
+that a person wishes to encapsulate themselves after death.  
+
+Once a reservation is created, this person may "label" it, similarly to how a gravestone
+may be engraved (example: Here lies James, do not wake until the year 3000.)
+
+Users may write "messages" on this reservation to this person in the hopes that if 
+they are revived somewhere down the line, they may be able to view the messages.

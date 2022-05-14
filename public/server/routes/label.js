@@ -1,12 +1,12 @@
 const express = require('express');
-const Note = require('../models/cryonote');
+const Label = require('../models/label');
 const router = express.Router();
 
 router
   .get('/', async (req, res) => {
     try {
-      const notes = await Note.getNotes();
-      res.send(notes);
+      const labels = await Label.getLabels();
+      res.send(labels);
     } catch(err) {
       res.status(401).send({message: err.message});
     }
@@ -14,9 +14,9 @@ router
 
   .post('/create', async (req, res) => {
     try {
-      const note = await Note.register(req.body);
-      console.log(note)
-      res.send({...note, noteContent: undefined})
+      const label = await Label.createLabel(req.body);
+      console.log(label)
+      res.send({...label, labelContent: undefined})
     } catch(error) {
       res.status(401).send({message: error.message});
     }
@@ -24,8 +24,8 @@ router
 
   .delete('/delete', async (req, res) => {
     try {
-      await Note.deleteNote(req.body.noteId);
-      res.send({success: "Note deleted"});
+      await Label.deleteLabel(req.body.labelId);
+      res.send({success: "Label deleted"});
     } catch(error) {
       res.status(401).send({message: error.message});
     }
@@ -33,9 +33,9 @@ router
 
   .put('/edit', async (req, res) => {
     try {
-      const note = await Note.editNote(req.body);
-      console.log(note)
-      res.send({...note, noteContent: undefined});
+      const label = await Label.editLabel(req.body);
+      console.log(label)
+      res.send({...label, labelContent: undefined});
     } catch(error) {
       res.status(401).send({message: error.message})
     }

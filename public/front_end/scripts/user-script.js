@@ -32,7 +32,12 @@ function register(e) {
   e.preventDefault();
 
   const name = document.getElementById("username").value;
+  const fisrstName = document.getElementById("first-name").value;
+  const lastName = document.getElementById("last-name").value;
+  const age = document.getElementById("age").value;
+  const email = document.getElementById("email").value;
   const pswd = document.getElementById("pswd").value;
+
 
   fetchData('/users/register', {username: name, password: pswd}, "POST")
   .then((data) => {

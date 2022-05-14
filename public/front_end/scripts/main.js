@@ -47,12 +47,12 @@ if(getCurrentUser()) {
 
 // if a user has a submitted reservation, allow them to view the reservation from nav bar
 const reservationForm = document.getElementById('reservation-form');
-if(getreservation()) {
+if(getCurrentUser() && getCurrentReservation()) {
   nav.innerHTML = `
   <ul>
     <li><a href="home.html">Home</a></li>
     <li><a id="logout">Logout</a></li>
-    <li><a href="reservation.html">View Reservation</a></li>
+    <li><a href="reservation.html">View Reservations</a></li>
   </ul>
   `;
 
@@ -119,8 +119,12 @@ export function getCurrentNote() {
   return JSON.parse(localStorage.getItem('note'));
 }
 
+export function getAllNotes(reservation) {
+  return true;
+}
+
 // exporting reservation functions
-export function setCurrentReservation(reservation) {
+export function setCurrentReservation(reservation_id) {
   localStorage.setItem('reservation',JSON.stringify(reservation))
 }
 

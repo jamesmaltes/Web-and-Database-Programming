@@ -26,27 +26,27 @@ async function getUser(user) {
     `;
   } else {
     sql = `SELECT * FROM users
-      WHERE username = "${user.username}"
+      WHERE user_email = "${user.userEmail}"
     `;
   }
 
   return await con.query(sql);
 }
 
-async function login(username, password) {
-  const user = await userExists(username);
-  if(!user[0]) throw Error('User not found')
+async function login(userEmail, password) {
+  const user = await userExists(userEmail);
+  if(!user[0]) throw Error('User email not found')
   if(user[0].user_password !== password) throw Error("Password is incorrect");
 
   return user[0];
 }
 
 async function register(user) {
-  const u = userExists(user.username);
-  if(u.length>0) throw Error("Username already exists");
+  const u = userExists(user.userEmail);
+  if(u.length>0) throw Error("Email already in use");
 
-  const sql = `INSERT INTO users (username, user_password)
-    VALUES ("${user.username}", "${user.password}")
+  const sql = `INSERT INTO users (user_email, user_password)
+    VALUES ("${user.userEmail}", "${user.password}")
   `;
 
   const insert = await con.query(sql);
@@ -62,16 +62,16 @@ async function deleteUser(userId) {
  
 }
 
-async function userExists(username) {
+async function userExists(userEmail) {
   const sql = `SELECT * FROM users
-    WHERE username = "${username}"
+    WHERE user_email = "${userEmail}"
   `;
   return await con.query(sql);
 }
 
 async function editUser(user) {
   const sql = `UPDATE users SET
-    username = "${user.userName}"
+    user_email = "${user.userEmail}"
     WHERE user_id = ${user.userId}
   `;
   const update = await con.query(sql);
