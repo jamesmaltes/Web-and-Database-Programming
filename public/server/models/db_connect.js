@@ -8,13 +8,13 @@ const con = mysql.createConnection({
   database: process.env.MYSQL_DB
 });
 
-con.connect(function(err) {
-  if(err) throw err;
-  console.log("Database Connected!!");
-  con.query("CREATE DATABASE IF NOT EXISTS cryopreserve", function(err, result) {
-    if(err) throw err;
-    console.log("Database Created!");
-  })
-});
+const query = (sql, binding) => {
+  return new Promise((resolve, reject) => {
+    con.query(sql, binding, (err, result, fields) => {
+      if (err) reject(err);
+      resolve(result);
+    });
+  });
+};
 
 module.exports = con; 

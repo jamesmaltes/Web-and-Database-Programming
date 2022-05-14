@@ -16,10 +16,10 @@ to the login page.
 -increment id numbers for new users upon registration
 -increment reservation id numbers for reservation requests
 
--allow users to add a note to their cryochamber
+-allow users to add a label to their cryochamber
 (similar to a gravestone message)
 
-This will turn the website into a notetaking website rather than 
+This will turn the website into a labeltaking website rather than 
 a purely e-commerce website
 
 */
@@ -56,11 +56,11 @@ if(getCurrentUser() && getCurrentReservation()) {
   </ul>
   `;
 
-  // changes reservation form to have buttons to add a note and delete a reservation
+  // changes reservation form to have buttons to add a label and delete a reservation
   reservationForm.innerHTML = `
   <div>
     <p class="error"></p>
-    <button class="btn" id="add-note">Add a Note to your Cryochamber</button>
+    <button class="btn" id="add-label">Add a Label to your Cryochamber</button>
     <button class="btn" id="delete-res">Delete your Reservation</button>
   </div>
   `;
@@ -91,11 +91,11 @@ export async function fetchData(route = '', data = {}, methodType) {
 
 // exporting user methods including logout
 export function setCurrentUser(user) {
-  localStorage.setItem('user', JSON.stringify(user));
+  localStorage.setItem('users', JSON.stringify(user));
 }
 
 export function removeCurrentUser() {
-  localStorage.removeItem('user')
+  localStorage.removeItem('users')
 }
 
 export function getCurrentUser() {
@@ -110,16 +110,16 @@ export function logout() {
   window.location.href = "login.html";
 }
 
-// exporting note methods
-export function setCurrentNote(note) {
-  localStorage.setItem('note', JSON.stringify(note));
+// exporting label methods
+export function setCurrentLabel(labels) {
+  localStorage.setItem('label', JSON.stringify(labels));
 }
 
-export function getCurrentNote() {
-  return JSON.parse(localStorage.getItem('note'));
+export function getCurrentLabel() {
+  return JSON.parse(localStorage.getItem('labels'));
 }
 
-export function getAllNotes(reservation) {
+export function getAllLabels(reservation_id) {
   return true;
 }
 

@@ -24,7 +24,7 @@ async function getLabel(label) {
     `;
   } else {
     sql = `SELECT * FROM labels
-      WHERE labelcontent = "${label.labelContent}"
+      WHERE label_content = "${label.labelContent}"
     `;
   }
 
