@@ -26,8 +26,9 @@ a purely e-commerce website
 
 // if a user exists and is logged in, add the profile page and logout button to the nav
 // if user not logged in, remove the reservation page and add login button
+
 const nav = document.querySelector('nav');
-if(getCurrentUser()) {
+/* (getCurrentUser()) {
   nav.innerHTML = `
   <ul>
     <li><a href="home.html">Home</a></li>
@@ -44,6 +45,7 @@ if(getCurrentUser()) {
   </ul>
   `
 }
+*/
 
 // if a user has a submitted reservation, allow them to view the reservation from nav bar
 const reservationForm = document.getElementById('reservation-form');

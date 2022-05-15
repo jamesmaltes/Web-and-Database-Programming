@@ -1,14 +1,16 @@
 const con = require("./db_connect");
 
-async function createTable() {
+async function createReservation() {
   let sql = `CREATE TABLE IF NOT EXISTS reservations (
     reservation_id INT NOT NULL AUTO_INCREMENT,
-    CONSTRAINT reservation_pk PRIMARY KEY(reservation_id)
-    CONSTRAINT user_fk FOREIGN KEY(username) REFERENCES users(username)
+    reservation VARCHAR(255),
+    user_id INT, 
+    CONSTRAINT reservation_pk PRIMARY KEY(reservation_id),
+    CONSTRAINT user_fk FOREIGN KEY(user_id) REFERENCES users(user_id)
   )`;
   await con.query(sql);
 }
-createTable();
+createReservation();
 
 let getReservations = async () => {
   const sql = `SELECT * FROM reservations`;
@@ -34,7 +36,7 @@ async function deleteReservation(reservationId) {
  
 }
 
-async function createReservation(reservationId) {
+async function postReservation(reservationId) {
   const sql = `INSERT INTO reservations (reservation_id)
     VALUES ("${reservation.reservationId}")
   `
@@ -48,4 +50,4 @@ async function reservationExists(reservationId) {
 }
 
 
-module.exports = { getReservations, createReservation, deleteReservation, getReservation, createTable };
+module.exports = { getReservations, postReservation, deleteReservation, getReservation, createReservation, reservationExists };

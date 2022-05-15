@@ -12,6 +12,15 @@ router
     }
   })
 
+  .get('/getAllLabels', async (req, res) => {
+    try {
+      const labels = await Label.getAllLabels();
+      res.send(labels);
+    } catch(err) {
+      res.status(401).send({message: err.message});
+    }
+  })
+
   .post('/create', async (req, res) => {
     try {
       const label = await Label.createLabel(req.body);

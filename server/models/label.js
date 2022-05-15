@@ -1,15 +1,16 @@
 const con = require("./db_connect");
 
-async function createTable() {
+async function createLabel() {
   let sql = `CREATE TABLE IF NOT EXISTS labels (
     label_id INT NOT NULL AUTO_INCREMENT,
-    label_content VARCHAR(255) NOT NULL UNIQUE,
-    CONSTRAINT label_pk PRIMARY KEY(label_id)
-    CONSTRAINT reservation_fk FOREIGN KEY(reservation_id) REFERENCES reservation(reservation_id)
-  )`;
+    label_content VARCHAR(255),
+    reservation_id INT,
+    CONSTRAINT label_pk PRIMARY KEY(label_id),
+    CONSTRAINT reservation_fk FOREIGN KEY(reservation_id) REFERENCES reservations(reservation_id)
+)`;
   await con.query(sql);
 }
-createTable();
+createLabel();
 
 let getLabels = async () => {
   const sql = `SELECT * FROM labels`;
@@ -31,7 +32,7 @@ async function getLabel(label) {
   return await con.query(sql);
 }
 
-async function createLabel(label) {
+async function postLabel(label) {
   const sql = `INSERT INTO labels (label_id, label_content)
     VALUES ("${label.labelId}","${label.labelContent}")
   `;
@@ -68,7 +69,8 @@ async function editLabel(label) {
 
 async function getAllLabels() {
   let sql;
-  sql = 'SELECT label, reservation, reservation_id FROM labels'
+  sql = 'SELECT label_content, label_id FROM labels'
+  return await con.query(sql);
 }
 
-module.exports = { getLabels, createLabel, deleteLabel, labelExists, editLabel, getLabel, getAllLabels, createTable };
+module.exports = { getLabels, postLabel, deleteLabel, labelExists, editLabel, getLabel, getAllLabels, createLabel };

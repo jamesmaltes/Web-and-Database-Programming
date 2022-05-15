@@ -1,6 +1,6 @@
-require ('dotenv').config();
 const express = require('express');
 const app = express();
+const path = require('path');
 
 //need to create this for each route file that is created
 const userRoutes = require('./server/routes/user');
@@ -23,8 +23,8 @@ app.use(function(req, res, next) {
 //need to create for each route file
 //what we will call on our front end when using fetch and making http requests
 app.use("/users", userRoutes);
-app.use("/reservations, reservationRoutes");
-app.use("/label, labelRoutes");
+app.use("/reservations", reservationRoutes);
+app.use("/label", labelRoutes);
 
 const PORT = process.env.PORT || 3000;
 app.listen(PORT, () => console.log(`Server started on port ${PORT}!`));
