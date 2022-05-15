@@ -8,13 +8,14 @@ if(loginForm) loginForm.addEventListener('submit', login);
 function login(e) {
   e.preventDefault();
 
-  const name = document.getElementById("username").value;
+  const email = document.getElementById("email").value;
   const pswd = document.getElementById("pswd").value;
-  fetchData('/users/login', {username: name, password: pswd}, "POST")
-  .then((data) => { //cathy123, 12345
+
+  fetchData('/users/login', {user_email: email, password: pswd}, "POST")
+  .then((data) => { //cathy@gmail.com, 12345
     if(!data.message) {
       setCurrentUser(data);
-      window.location.href = "bmi.html";
+      window.location.href = "home.html";
     }
   })
   .catch((error) => {
@@ -32,18 +33,18 @@ function register(e) {
   e.preventDefault();
 
   const name = document.getElementById("username").value;
-  const fisrstName = document.getElementById("first-name").value;
+  const firstName = document.getElementById("first-name").value;
   const lastName = document.getElementById("last-name").value;
   const age = document.getElementById("age").value;
   const email = document.getElementById("email").value;
   const pswd = document.getElementById("pswd").value;
 
 
-  fetchData('/users/register', {username: name, password: pswd}, "POST")
+  fetchData('/users/register', {username: name, first_name: firstName, last_name: lastName, age: age, email: email, password: pswd}, "POST")
   .then((data) => {
     if(!data.message) {
       setCurrentUser(data);
-      window.location.href = "bmi.html";
+      window.location.href = "home.html";
     }
   })
   .catch((error) => {

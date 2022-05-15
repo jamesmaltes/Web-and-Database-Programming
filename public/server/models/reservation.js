@@ -48,4 +48,4 @@ async function reservationExists(reservationId) {
 }
 
 
-module.exports = { getreservations, createReservation, deleteReservation, getreservation, createTable };
+module.exports = { getReservations, createReservation, deleteReservation, getReservation, createTable };
