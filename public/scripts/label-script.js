@@ -4,7 +4,7 @@ from './main.js'
 
 
   
-await fetch('http://localhost:3000/label/getAllLabels').then(function(response) { 
+await fetch('/label/getAllLabels').then(function(response) { 
     // Convert to JSON
     return response.json();
   }).then(function(L) {

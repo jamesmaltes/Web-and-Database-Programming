@@ -26,5 +26,5 @@ app.use("/users", userRoutes);
 app.use("/reservations", reservationRoutes);
 app.use("/label", labelRoutes);
 
-const PORT = process.env.PORT || 3000;
+const PORT = process.env.PORT || 80;
 app.listen(PORT, () => console.log(`Server started on port ${PORT}!`));
