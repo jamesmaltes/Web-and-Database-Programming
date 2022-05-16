@@ -1,8 +1,16 @@
 import 
-{ getCurrentUser, setCurrentUser, removeCurrentUser, logout, fetchData } 
+{ getCurrentReservation, getCurrentUser, setCurrentUser, removeCurrentUser, logout, fetchData } 
 from './main.js'
 
+await fetch('/reservations/getAllReservations').then(function(response) { 
+  // Convert to JSON
+  return response.json();
+}).then(function(R) {
+    var n = JSON.stringify(R.reservation_id);
+      console.log(R);
+})
 
+/*
 let user = getCurrentUser();
 
 if(!user) window.location.href = "login.html";
@@ -92,3 +100,5 @@ function deleteAccount() {
     })
   }
 }
+
+*/

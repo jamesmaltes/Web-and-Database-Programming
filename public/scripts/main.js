@@ -28,7 +28,7 @@ a purely e-commerce website
 // if user not logged in, remove the reservation page and add login button
 
 const nav = document.querySelector('nav');
-/* (getCurrentUser()) {
+if(getCurrentUser()) {
   nav.innerHTML = `
   <ul>
     <li><a href="home.html">Home</a></li>
@@ -45,9 +45,10 @@ const nav = document.querySelector('nav');
   </ul>
   `
 }
-*/
+
 
 // if a user has a submitted reservation, allow them to view the reservation from nav bar
+
 const reservationForm = document.getElementById('reservation-form');
 if(getCurrentUser() && getCurrentReservation()) {
   nav.innerHTML = `
@@ -67,6 +68,7 @@ if(getCurrentUser() && getCurrentReservation()) {
   </div>
   `;
 }
+
 
 // http://localhost:3000
 // Fetch method implementation:
@@ -101,7 +103,7 @@ export function removeCurrentUser() {
 }
 
 export function getCurrentUser() {
-  return JSON.parse(localStorage.getItem('user'));
+  return JSON.parse(localStorage.getItem('users'));
 }
 
 export const logoutBtn = document.getElementById("logout");
@@ -126,7 +128,7 @@ export function getAllLabels(reservation_id) {
 }
 
 // exporting reservation functions
-export function setCurrentReservation(reservation_id) {
+export function setCurrentReservation(reservation) {
   localStorage.setItem('reservation',JSON.stringify(reservation))
 }
 

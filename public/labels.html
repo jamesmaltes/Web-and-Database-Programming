@@ -20,19 +20,23 @@
         </nav>
     </header>
     <main>
-        <form id="reservation-form-1">
-            <h1>Reserve a Spot in our Inventory:</h1>
+        <form class= "label" id="reservation-form">
+            <label for="label">Label Your Reservation:</label>
             <br>
-            <input type="submit" id="reservation-btn-1" value="Reserve now:">
+            <input id="label" type="text">
             <br>
-            <p>(you will be allowed to label after submitting)</p>
+            <input type="submit" id="reservation-btn" value="Label now:">
+            <br>
         </form>
+        <section id="labels">
+
+        </section>
     </main>
     <footer>
         <hr>
         <h2>Cryo-Preserve, LLC &copy;</h2>
     </footer>
 </body>
-<script type="module" src="scripts/reservation-script.js"></script>
+<script type="module" src="scripts/label-script.js"></script>
 <script type="module" src="scripts/main.js"></script>
 </html>

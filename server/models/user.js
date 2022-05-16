@@ -44,8 +44,8 @@ async function register(user) {
   const u = userExists(user.userEmail);
   if(u.length>0) throw Error("Email already in use");
 
-  const sql = `INSERT INTO users (user_email, user_password)
-    VALUES ("${user.userEmail}", "${user.password}")
+  const sql = `INSERT INTO users (user_email, user_password, user_age)
+    VALUES ("${user.userEmail}", "${user.password}", ${user.age})
   `;
 
   const insert = await con.query(sql);

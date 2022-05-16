@@ -23,31 +23,44 @@ async function getReservation(reservation) {
     sql = `SELECT * FROM reservations
       WHERE reservation_id = ${reservation.reservationId}
     `;
-  } 
+  }
+    else {
+      sql = `SELECT * FROM reservations
+        WHERE user_id = ${reservation.userId}
+      `;
+    }
 
   return await con.query(sql);
 }
 
-async function deleteReservation(reservationId) {
+async function deleteReservation(reservation) {
   const sql = `DELETE FROM reservations 
-    WHERE reservation_id = ${reservationId}
+    WHERE reservation_id = ${reservation.reservationId}
   `;
   await con.query(sql);
  
 }
 
-async function postReservation(reservationId) {
-  const sql = `INSERT INTO reservations (reservation_id)
-    VALUES ("${reservation.reservationId}")
-  `
+async function postReservation(reservation) {
+  const sql = `INSERT INTO reservations (user_id)
+    VALUES (${reservation.userId})
+  `;
+  const insert = await con.query(sql);
+  const newRes = await getReservation(reservation);
+  return newRes[0];
 }
 
-async function reservationExists(reservationId) {
+async function reservationExists(reservation) {
   const sql = `SELECT * FROM reservations
-    WHERE reservation_id = "${reservationId}"
+    WHERE reservation_id = "${reservation.reservationId}"
   `;
   return await con.query(sql);
 }
 
+async function getAllReservations() {
+  let sql;
+  sql = 'SELECT reservation_id FROM reservations'
+  return await con.query(sql);
+}
 
-module.exports = { getReservations, postReservation, deleteReservation, getReservation, createReservation, reservationExists };
+module.exports = { getAllReservations, getReservations, postReservation, deleteReservation, getReservation, createReservation, reservationExists };
