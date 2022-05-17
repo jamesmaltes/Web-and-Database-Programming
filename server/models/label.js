@@ -4,9 +4,9 @@ async function createLabel() {
   let sql = `CREATE TABLE IF NOT EXISTS labels (
     label_id INT NOT NULL AUTO_INCREMENT,
     label_content VARCHAR(255),
-    reservation_id INT,
+    user_id INT,
     CONSTRAINT label_pk PRIMARY KEY(label_id),
-    CONSTRAINT reservation_fk FOREIGN KEY(reservation_id) REFERENCES reservations(reservation_id)
+    CONSTRAINT user2_fk FOREIGN KEY(user_id) REFERENCES users(user_id)
 )`;
   await con.query(sql);
 }
@@ -33,8 +33,8 @@ async function getLabel(label) {
 }
 
 async function postLabel(label) {
-  const sql = `INSERT INTO labels (label_id, label_content)
-    VALUES ("${label.labelId}","${label.labelContent}")
+  const sql = `INSERT INTO labels (label_content, user_id)
+    VALUES ("${label.labelContent}", ${label.userId})
   `;
 
   const insert = await con.query(sql);
@@ -69,7 +69,7 @@ async function editLabel(label) {
 
 async function getAllLabels() {
   let sql;
-  sql = 'SELECT label_content, label_id FROM labels'
+  sql = 'SELECT label_content, label_id, user_id FROM labels'
   return await con.query(sql);
 }
 

@@ -12,11 +12,11 @@ router
     }
   })
 
-  .post('/create', async (req, res) => {
+  .post('/postReservation', async (req, res) => {
     try {
-      const reservation = await Reservation.register(req.body);
+      const reservation = await Reservation.postReservation(req.body);
       console.log(reservation)
-      res.send({...reservation, reservationId: undefined})
+      res.send({...reservation, userId: undefined})
     } catch(error) {
       res.status(401).send({message: error.message});
     }
@@ -28,6 +28,15 @@ router
       res.send({success: "Reservation deleted."});
     } catch(error) {
       res.status(401).send({message: error.message});
+    }
+  })
+
+  .get('/getAllReservations', async (req, res) => {
+    try {
+      const reservations = await Reservation.getAllReservations();
+      res.send(reservations);
+    } catch(err) {
+      res.status(401).send({message: err.message});
     }
   })
   

@@ -4,8 +4,8 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="styles/loginstyle.css">
-    <title>Login</title>
+    <link rel="stylesheet" href="styles/reservationstyle.css">
+    <title>Reservation</title>
 </head>
 <body>
     <header>
@@ -20,14 +20,23 @@
         </nav>
     </header>
     <main>
-        <section id="profile"></section>
-        <section id="editForm"></section>
+        <form class= "label" id="reservation-form">
+            <label for="label">Add a message for your loved one to view in the future:</label>
+            <br>
+            <input id="label" type="text">
+            <br>
+            <input type="submit" id="reservation-btn" value="Add your message:">
+            <br>
+        </form>
+        <section id="labels">
+
+        </section>
     </main>
     <footer>
         <hr>
         <h2>Cryo-Preserve, LLC &copy;</h2>
     </footer>
 </body>
-<script type = "module" src="scripts/main.js"></script>
-<script type= "module" src= "scripts/profile.js"></script>
+<script type="module" src="scripts/label-script.js"></script>
+<script type="module" src="scripts/main.js"></script>
 </html>

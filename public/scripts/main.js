@@ -28,10 +28,11 @@ a purely e-commerce website
 // if user not logged in, remove the reservation page and add login button
 
 const nav = document.querySelector('nav');
-/* (getCurrentUser()) {
+if(getCurrentUser()) {
   nav.innerHTML = `
   <ul>
     <li><a href="home.html">Home</a></li>
+    <li><a href="profile.html">Profile</a></li>
     <li><a id="logout">Logout</a></li>
     <li><a href="reservation.html">Reserve a Spot</a></li>
   </ul>
@@ -45,28 +46,18 @@ const nav = document.querySelector('nav');
   </ul>
   `
 }
-*/
 
-// if a user has a submitted reservation, allow them to view the reservation from nav bar
-const reservationForm = document.getElementById('reservation-form');
-if(getCurrentUser() && getCurrentReservation()) {
+if(getCurrentReservation()) {
   nav.innerHTML = `
   <ul>
     <li><a href="home.html">Home</a></li>
+    <li><a href="profile.html">Profile</a></li>
     <li><a id="logout">Logout</a></li>
-    <li><a href="reservation.html">View Reservations</a></li>
+    <li><a href="labels.html">View Messages</a></li>
   </ul>
-  `;
-
-  // changes reservation form to have buttons to add a label and delete a reservation
-  reservationForm.innerHTML = `
-  <div>
-    <p class="error"></p>
-    <button class="btn" id="add-label">Add a Label to your Cryochamber</button>
-    <button class="btn" id="delete-res">Delete your Reservation</button>
-  </div>
-  `;
+  `
 }
+
 
 // http://localhost:3000
 // Fetch method implementation:
@@ -93,11 +84,11 @@ export async function fetchData(route = '', data = {}, methodType) {
 
 // exporting user methods including logout
 export function setCurrentUser(user) {
-  localStorage.setItem('users', JSON.stringify(user));
+  localStorage.setItem('user', JSON.stringify(user));
 }
 
 export function removeCurrentUser() {
-  localStorage.removeItem('users')
+  localStorage.removeItem('user')
 }
 
 export function getCurrentUser() {
@@ -113,12 +104,12 @@ export function logout() {
 }
 
 // exporting label methods
-export function setCurrentLabel(labels) {
-  localStorage.setItem('label', JSON.stringify(labels));
+export function setCurrentLabel(label) {
+  localStorage.setItem('label', JSON.stringify(label));
 }
 
 export function getCurrentLabel() {
-  return JSON.parse(localStorage.getItem('labels'));
+  return JSON.parse(localStorage.getItem('label'));
 }
 
 export function getAllLabels(reservation_id) {
@@ -126,7 +117,7 @@ export function getAllLabels(reservation_id) {
 }
 
 // exporting reservation functions
-export function setCurrentReservation(reservation_id) {
+export function setCurrentReservation(reservation) {
   localStorage.setItem('reservation',JSON.stringify(reservation))
 }
 
