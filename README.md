@@ -65,52 +65,64 @@ Type in "localhost" and press enter.  Website should start up at the home page (
 **<h1>Website Screenshots</h1>**
 
 **Home page without a logged in user. Note the nav bar has links for Home, Login, and Register:**
-![Image]("C:\Users\James\Pictures\Screenshots\cryohome.png")
+![cryohome](https://user-images.githubusercontent.com/102160505/168894814-3915380a-ffac-4d67-9670-7646243ff0a3.png)
 
 **Home page with user logged in. Notice the nav bar changed to links for Home, Profile, Logout, and Reserve a Spot:**
-![Image]("C:\Users\James\Pictures\Screenshots\cryohomelogged.PNG")
+![cryohomelogged](https://user-images.githubusercontent.com/102160505/168894920-d8791110-b02a-45ff-86a7-ec1de56cc98d.PNG)
 
 <pre>
 </pre>
 
 **Register page:**
-![Image]()
+![cryoregister](https://user-images.githubusercontent.com/102160505/168895001-45af5e48-19b3-4452-b0cd-599d8fa53fe4.PNG)
+
 
 <pre>
 </pre>
 
 **Login page:**
-![Image]()
+![cryologin](https://user-images.githubusercontent.com/102160505/168895025-21e4f4a6-9841-48e2-9363-7fc80c0d9154.PNG)
+
 
 <pre>
 </pre>
 
 **Profile page:**
-![Image]()
+![cryoprofile](https://user-images.githubusercontent.com/102160505/168895044-72d0f4a2-58c4-4eb9-9b14-69b1488ef4aa.PNG)
+
 
 **Profile page once "Edit Info" is clicked:**
-![Image]()
+![cryoedit](https://user-images.githubusercontent.com/102160505/168895082-c8d0d01e-5fe2-42a0-8e84-19768aedb1ce.PNG)
+
+**Profile page once "Edit Info" is clicked:**
+![cryodelete](https://user-images.githubusercontent.com/102160505/168895441-94857dd4-903a-4abc-ad87-30c20b412591.PNG)
+
 
 <pre>
 </pre>
 
 **Reservation page:**
-![Image]()
+![cryoreservation](https://user-images.githubusercontent.com/102160505/168895096-1b9a229d-800a-4047-8c14-f043b525be66.PNG)
+
 
 <pre>
 </pre>
 
 **Page for adding messages:**
-![Image]()
+![cryolabel](https://user-images.githubusercontent.com/102160505/168895122-350ebc57-dcc4-4d45-a3c8-8b0e7a547967.PNG)
+
 
 **Added messages:**
-![Image]()
+![cryoaddmessage](https://user-images.githubusercontent.com/102160505/168895161-8b84d0c1-7ea8-4146-96ad-23160da477a2.PNG)
+
 
 **Typed message to replace initial message:**
-![Image]()
+![cryoeditmessage](https://user-images.githubusercontent.com/102160505/168895210-24f93a97-cf9c-4dfb-b4e6-17c1be6d0439.PNG)
+
 
 **Message replaced:**
-![Image]()
+![cryoreplaced](https://user-images.githubusercontent.com/102160505/168895282-859e83d5-bb68-41d4-ab5e-6edba8a6ec90.PNG)
+
 
 **Message deleted:**
-![Image]()
+![cryodeletemessage](https://user-images.githubusercontent.com/102160505/168895322-de98e30b-348b-4e8f-a2b7-2e0b79c8cbb6.PNG)
