@@ -38,25 +38,25 @@ Node.js, Express.js were used along with mySQL for database management and retri
 </pre>
 
 **<h1>Steps to get website to work:</h1>**
-**In VSCode Terminal type:**\
+**<h3>In VSCode Terminal type:</h3>**\
 npm install express\
 npm install dotenv\
 npm install mysql2
 
-**Create a .env file with the following content:**\
+**<h3>Create a .env file with the following content:</h3>**\
 MYSQL_HOST = "localhost"\
 MYSQL_USERNAME = "your_username"\
 MYSQL_PSWD = "your_password"\
 MYSQL_DB = "database_name"
 
-**In MySQL Command Client type:**\
+**<h3>In MySQL Command Client type:</h3>**\
 CREATE DATABASE database_name;\
 USE database_name;
 
-**In VSCode Terminal type:**\
+**<h3>In VSCode Terminal type:</h3>**\
 npm run dev
 
-**In Browser:**\
+**<h3>In Browser:</h3>**\
 Type in "localhost" and press enter.  Website should start up at the home page (home.html).
 
 <pre>
@@ -64,65 +64,65 @@ Type in "localhost" and press enter.  Website should start up at the home page (
 
 **<h1>Website Screenshots</h1>**
 
-**Home page without a logged in user. Note the nav bar has links for Home, Login, and Register:**
+**<h3>Home page without a logged in user. Note the nav bar has links for Home, Login, and Register:</h3>**
 ![cryohome](https://user-images.githubusercontent.com/102160505/168894814-3915380a-ffac-4d67-9670-7646243ff0a3.png)
 
-**Home page with user logged in. Notice the nav bar changed to links for Home, Profile, Logout, and Reserve a Spot:**
+**<h3>Home page with user logged in. Notice the nav bar changed to links for Home, Profile, Logout, and Reserve a Spot:</h3>**
 ![cryohomelogged](https://user-images.githubusercontent.com/102160505/168894920-d8791110-b02a-45ff-86a7-ec1de56cc98d.PNG)
 
 <pre>
 </pre>
 
-**Register page:**
+**<h3>Register page:</h3>**
 ![cryoregister](https://user-images.githubusercontent.com/102160505/168895001-45af5e48-19b3-4452-b0cd-599d8fa53fe4.PNG)
 
 
 <pre>
 </pre>
 
-**Login page:**
+**<h3>Login page:</h3>**
 ![cryologin](https://user-images.githubusercontent.com/102160505/168895025-21e4f4a6-9841-48e2-9363-7fc80c0d9154.PNG)
 
 
 <pre>
 </pre>
 
-**Profile page:**
+**<h3>Profile page:</h3>**
 ![cryoprofile](https://user-images.githubusercontent.com/102160505/168895044-72d0f4a2-58c4-4eb9-9b14-69b1488ef4aa.PNG)
 
 
-**Profile page once "Edit Info" is clicked:**
+**<h3>Profile page once "Edit Info" is clicked:</h3>**
 ![cryoedit](https://user-images.githubusercontent.com/102160505/168895082-c8d0d01e-5fe2-42a0-8e84-19768aedb1ce.PNG)
 
-**Profile page once "Edit Info" is clicked:**
+**<h3>Profile page once "Edit Info" is clicked:</h3>**
 ![cryodelete](https://user-images.githubusercontent.com/102160505/168895441-94857dd4-903a-4abc-ad87-30c20b412591.PNG)
 
 
 <pre>
 </pre>
 
-**Reservation page:**
+**<h3>Reservation page:</h3>**
 ![cryoreservation](https://user-images.githubusercontent.com/102160505/168895096-1b9a229d-800a-4047-8c14-f043b525be66.PNG)
 
 
 <pre>
 </pre>
 
-**Page for adding messages:**
+**<h3>Page for adding messages:</h3>**
 ![cryolabel](https://user-images.githubusercontent.com/102160505/168895122-350ebc57-dcc4-4d45-a3c8-8b0e7a547967.PNG)
 
 
-**Added messages:**
+**<h3>Added messages:</h3>**
 ![cryoaddmessage](https://user-images.githubusercontent.com/102160505/168895161-8b84d0c1-7ea8-4146-96ad-23160da477a2.PNG)
 
 
-**Typed message to replace initial message:**
+**<h3>Typed message to replace initial message:</h3>**
 ![cryoeditmessage](https://user-images.githubusercontent.com/102160505/168895210-24f93a97-cf9c-4dfb-b4e6-17c1be6d0439.PNG)
 
 
-**Message replaced:**
+**<h3>Message replaced:</h3>**
 ![cryoreplaced](https://user-images.githubusercontent.com/102160505/168895282-859e83d5-bb68-41d4-ab5e-6edba8a6ec90.PNG)
 
 
-**Message deleted:**
+**<h3>Message deleted:</h3>**
 ![cryodeletemessage](https://user-images.githubusercontent.com/102160505/168895322-de98e30b-348b-4e8f-a2b7-2e0b79c8cbb6.PNG)
