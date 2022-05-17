@@ -55,7 +55,7 @@ async function register(user) {
 
 async function deleteUser(userEmail) {
   const sql = `DELETE FROM users 
-    WHERE user_email = "${userEmail}"
+  WHERE user_email = "${userEmail}"
   `;
   await con.query(sql);
  
