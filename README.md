@@ -18,6 +18,12 @@ Every time the link "Reserve a Slot" is pressed no matter if the user has a rese
 Blank messages can be added without any text content.
 
 The "edit message" button applies the edited content from the text input box, which is always visible.  More intuitive functionality would be to have the text box appear *after* the edit button is pressed, then have another "apply edit" button to apply the edit to the message.
+
+"Messages" in the project are named as "labels" within code.  This is due to an initial idea I had about labeling each reservation, but ended up changing it in the end.
+
+Future implementations would allow the initial user, (once they have been revived) to come back to their reservation page, view their loved ones' messages, and reply to them, almost like a message board.
+The only issue is that these can only be accessed by the same user.
+(This would be the purpose of comment.js).
 <pre>
 </pre>
 
@@ -35,21 +41,23 @@ Node.js, Express.js were used along with mySQL for database management and retri
 ![WebFinalERD](https://user-images.githubusercontent.com/102160505/168905548-89931bee-d6b4-4522-9f0c-8013fb4d8394.PNG)
 
 **<h3>Updated Business Rules:</h3>**
-<USER> <may> <Submit> <one> <RESERVATION>\
-<RESERVATION> <must> <Be Submitted By> <one> <USER>\
+```
+<USER> <may> <Submit> <one> <RESERVATION>
+<RESERVATION> <must> <Be Submitted By> <one> <USER>
   
-<USER> <may> <Create> <any number> <MESSAGE>\
-<MESSAGE> <must> <Be Created By> <one> <USER>\
+<USER> <may> <Create> <any number> <MESSAGE>
+<MESSAGE> <must> <Be Created By> <one> <USER>
 
-<USER> <may> <Create> <any number> <COMMENT>\
-<COMMENT> <must> <Be Created By> <one> <USER>\  
+<USER> <may> <Create> <any number> <COMMENT>
+<COMMENT> <must> <Be Created By> <one> <USER>
 
-<RESERVATION> <may> <Request> <one> <CHAMBER>\
-<CHAMBER> <must> <Be Requested By> <one> <RESERVATION>\
+<RESERVATION> <may> <Request> <one> <CHAMBER>
+<CHAMBER> <must> <Be Requested By> <one> <RESERVATION>
 
-<COMPANY> <may> <Supply> <any number> <CHAMBER>\
-<CHAMBER> <must> <Be Supplied By> <one> <COMPANY>\
-  
+<COMPANY> <may> <Supply> <any number> <CHAMBER>
+<CHAMBER> <must> <Be Supplied By> <one> <COMPANY>
+```  
+
 <pre>
 </pre>
 
