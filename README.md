@@ -32,7 +32,7 @@ Node.js, Express.js were used along with mySQL for database management and retri
 </pre>
 
 **<h1>Final ERD Screenshot:</h1>**
-![ERD]()
+![Image]()
 
 <pre>
 </pre>
@@ -65,52 +65,52 @@ Type in "localhost" and press enter.  Website should start up at the home page (
 **<h1>Website Screenshots</h1>**
 
 **Home page without a logged in user. Note the nav bar has links for Home, Login, and Register:**
-![ERD]()
+![Image]("C:\Users\James\Pictures\Screenshots\cryohome.png")
 
 **Home page with user logged in. Notice the nav bar changed to links for Home, Profile, Logout, and Reserve a Spot:**
-![ERD]()
+![Image]("C:\Users\James\Pictures\Screenshots\cryohomelogged.PNG")
 
 <pre>
 </pre>
 
 **Register page:**
-![ERD]()
+![Image]()
 
 <pre>
 </pre>
 
 **Login page:**
-![ERD]()
+![Image]()
 
 <pre>
 </pre>
 
 **Profile page:**
-![ERD]()
+![Image]()
 
 **Profile page once "Edit Info" is clicked:**
-![ERD]()
+![Image]()
 
 <pre>
 </pre>
 
 **Reservation page:**
-![ERD]()
+![Image]()
 
 <pre>
 </pre>
 
 **Page for adding messages:**
-![ERD]()
+![Image]()
 
 **Added messages:**
-![ERD]()
+![Image]()
 
 **Typed message to replace initial message:**
-![ERD]()
+![Image]()
 
 **Message replaced:**
-![ERD]()
+![Image]()
 
 **Message deleted:**
-![ERD]()
+![Image]()
