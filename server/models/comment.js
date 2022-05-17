@@ -1,15 +1,16 @@
 const con = require("./db_connect");
 
-async function createTable() {
+async function createComment() {
   let sql = `CREATE TABLE IF NOT EXISTS comments (
     comment_id INT NOT NULL AUTO_INCREMENT,
-    comment_content VARCHAR(255) NOT NULL UNIQUE,
-    CONSTRAINT comment_pk PRIMARY KEY(comment_id)
-    CONSTRAINT reservation_fk FOREIGN KEY(reservation_id) REFERENCES reservation(reservation_id)
-  )`;
+    comment_content VARCHAR(255),
+    user_id INT,
+    CONSTRAINT comment_pk PRIMARY KEY(comment_id),
+    CONSTRAINT user3_fk FOREIGN KEY(user_id) REFERENCES users(user_id)
+)`;
   await con.query(sql);
 }
-createTable();
+createComment();
 
 let getComments = async () => {
   const sql = `SELECT * FROM comments`;
@@ -31,9 +32,9 @@ async function getComment(comment) {
   return await con.query(sql);
 }
 
-async function createComment(comment) {
-  const sql = `INSERT INTO comments (comment_id, comment_content)
-    VALUES ("${comment.commentId}","${comment.commentContent}")
+async function postComment(comment) {
+  const sql = `INSERT INTO comments (comment_content, user_id)
+    VALUES ("${comment.commentContent}", ${comment.userId})
   `;
 
   const insert = await con.query(sql);
@@ -68,7 +69,8 @@ async function editComment(comment) {
 
 async function getAllComments() {
   let sql;
-  sql = 'SELECT comment, reservation, reservation_id FROM comments'
+  sql = 'SELECT comment_content, comment_id, user_id FROM comments'
+  return await con.query(sql);
 }
 
-module.exports = { getComments, createComment, deleteComment, commentExists, editComment, getComment, getAllComments, createTable };
+module.exports = { getComments, postComment, deleteComment, commentExists, editComment, getComment, getAllComments, createComment };

@@ -48,28 +48,6 @@ if(getCurrentUser()) {
 }
 
 
-// if a user has a submitted reservation, allow them to view the reservation from nav bar
-
-const reservationForm = document.getElementById('reservation-form');
-if(getCurrentUser() && getCurrentReservation()) {
-  nav.innerHTML = `
-  <ul>
-    <li><a href="home.html">Home</a></li>
-    <li><a id="logout">Logout</a></li>
-    <li><a href="reservation.html">View Reservations</a></li>
-  </ul>
-  `;
-
-  // changes reservation form to have buttons to add a label and delete a reservation
-  reservationForm.innerHTML = `
-  <div>
-    <p class="error"></p>
-    <button class="btn" id="add-label">Add a Label to your Cryochamber</button>
-    <button class="btn" id="delete-res">Delete your Reservation</button>
-  </div>
-  `;
-}
-
 
 // http://localhost:3000
 // Fetch method implementation:
@@ -96,15 +74,15 @@ export async function fetchData(route = '', data = {}, methodType) {
 
 // exporting user methods including logout
 export function setCurrentUser(user) {
-  localStorage.setItem('users', JSON.stringify(user));
+  localStorage.setItem('user', JSON.stringify(user));
 }
 
 export function removeCurrentUser() {
-  localStorage.removeItem('users')
+  localStorage.removeItem('user')
 }
 
 export function getCurrentUser() {
-  return JSON.parse(localStorage.getItem('users'));
+  return JSON.parse(localStorage.getItem('user'));
 }
 
 export const logoutBtn = document.getElementById("logout");
@@ -116,12 +94,12 @@ export function logout() {
 }
 
 // exporting label methods
-export function setCurrentLabel(labels) {
-  localStorage.setItem('label', JSON.stringify(labels));
+export function setCurrentLabel(label) {
+  localStorage.setItem('label', JSON.stringify(label));
 }
 
 export function getCurrentLabel() {
-  return JSON.parse(localStorage.getItem('labels'));
+  return JSON.parse(localStorage.getItem('label'));
 }
 
 export function getAllLabels(reservation_id) {

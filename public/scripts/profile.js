@@ -1,5 +1,5 @@
 import 
-{ getCurrentReservation, getCurrentUser, setCurrentUser, removeCurrentUser, logout, fetchData } 
+{ getCurrentUser, setCurrentUser, removeCurrentUser, logout, fetchData } 
 from './main.js'
 
 let user = getCurrentUser();
@@ -27,7 +27,7 @@ function editProfile() {
       <p class="error"></p>
       <h2>Edit Profile</h2>
       <label for="username">Change Email Address:</label>
-      <input type="text" name="username" id="username" placeholder="${user.userEmail}">
+      <input type="text" name="username" id="username" placeholder="${user.user_email}">
       <br>
       <input type="submit" value="Submit">
     </form>
@@ -56,7 +56,7 @@ function editAccount(e) {
     let err = "No changes made";
     document.querySelector("#editForm p.error").innerHTML = err;
   } else {
-    fetchData('/users/edit', {userId: user.user_id, userEmail: user.userEmail}, "PUT")
+    fetchData('/users/edit', {userId: user.user_id, userEmail: userEmail}, "PUT")
     .then((data) => {
       if(!data.message) {
         removeCurrentUser();

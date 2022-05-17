@@ -54,7 +54,8 @@ async function register(user) {
 }
 
 async function deleteUser(userId) {
-  const sql = `DELETE FROM users 
+  const sql = `FOREIGN_KEY_CHECKS=0;
+  DELETE FROM users 
     WHERE user_id = ${userId}
   `;
   await con.query(sql);

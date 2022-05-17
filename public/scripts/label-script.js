@@ -43,8 +43,8 @@ await fetch('/label/getAllLabels').then(function(response) {
             ul.appendChild(li);
             li.innerHTML+=la.label_content;
             li.style.width = "max-content";
-            li.style.fontSize = "30px"
-            li.style.marginTop = "20px"
+            li.style.fontSize = "20px"
+            li.style.marginTop = "75px"
             li.style.marginLeft = "auto"
             li.style.marginRight = "auto"
             li.style.marginBottom = "20px"
@@ -53,6 +53,7 @@ await fetch('/label/getAllLabels').then(function(response) {
             li.style.backgroundColor = "blue"
             li.style.textAlign = "center"
 
+            
             // new input to put edited text in
               let input = document.createElement('input');
               input.id = "new-label";
@@ -60,6 +61,7 @@ await fetch('/label/getAllLabels').then(function(response) {
               input.style.display = "block"
               input.style.marginLeft = "auto"
               input.style.marginRight = "auto"
+              input.style.marginBottom = "75px"
               input.placeholder = "Edit message in this box:"
               ul.appendChild(input);
 
