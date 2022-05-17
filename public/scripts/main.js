@@ -47,6 +47,16 @@ if(getCurrentUser()) {
   `
 }
 
+if(getCurrentReservation()) {
+  nav.innerHTML = `
+  <ul>
+    <li><a href="home.html">Home</a></li>
+    <li><a href="profile.html">Profile</a></li>
+    <li><a id="logout">Logout</a></li>
+    <li><a href="labels.html">View Messages</a></li>
+  </ul>
+  `
+}
 
 
 // http://localhost:3000

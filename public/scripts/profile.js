@@ -1,5 +1,5 @@
 import 
-{ getCurrentUser, setCurrentUser, removeCurrentUser, logout, fetchData } 
+{ getCurrentUser, setCurrentUser, removeCurrentUser, logout, fetchData, getCurrentReservation } 
 from './main.js'
 
 let user = getCurrentUser();
@@ -26,8 +26,8 @@ function editProfile() {
     <form id="form" class="basic-form">
       <p class="error"></p>
       <h2>Edit Profile</h2>
-      <label for="username">Change Email Address:</label>
-      <input type="text" name="username" id="username" placeholder="${user.user_email}">
+      <label for="userEmail">Change Email Address:</label>
+      <input type="text" name="userEmail" id="userEmail" placeholder="${user.user_email}">
       <br>
       <input type="submit" value="Submit">
     </form>
@@ -51,7 +51,7 @@ function editProfile() {
 function editAccount(e) {
   e.preventDefault();
 
-  let userEmail = document.getElementById("username").value;
+  let userEmail = document.getElementById("userEmail").value;
   if(userEmail === user.userEmail) {
     let err = "No changes made";
     document.querySelector("#editForm p.error").innerHTML = err;
@@ -76,7 +76,7 @@ function editAccount(e) {
 
 function deleteAccount() {
   if(confirm('Are you sure you want to delete your account?')) {
-    fetchData('/users/delete', {userId: user.user_id}, "DELETE")
+    fetchData('/users/delete', {userEmail: user.user_email}, "DELETE")
     .then((data) => {
       if(!data.message) {
         console.log(data.success)

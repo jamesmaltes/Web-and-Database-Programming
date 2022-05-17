@@ -44,8 +44,8 @@ async function register(user) {
   const u = userExists(user.userEmail);
   if(u.length>0) throw Error("Email already in use");
 
-  const sql = `INSERT INTO users (user_email, user_password, user_age)
-    VALUES ("${user.userEmail}", "${user.password}", ${user.age})
+  const sql = `INSERT INTO users (user_email, user_password)
+    VALUES ("${user.userEmail}", "${user.password}")
   `;
 
   const insert = await con.query(sql);
@@ -53,10 +53,9 @@ async function register(user) {
   return newUser[0];
 }
 
-async function deleteUser(userId) {
-  const sql = `FOREIGN_KEY_CHECKS=0;
-  DELETE FROM users 
-    WHERE user_id = ${userId}
+async function deleteUser(userEmail) {
+  const sql = `DELETE FROM users 
+    WHERE user_email = "${userEmail}"
   `;
   await con.query(sql);
  

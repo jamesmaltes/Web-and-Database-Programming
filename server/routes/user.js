@@ -33,7 +33,7 @@ router
 
   .delete('/delete', async (req, res) => {
     try {
-      await User.deleteUser(req.body.userId);
+      await User.deleteUser(req.body.userEmail);
       res.send({success: "We'll miss you...:("});
     } catch(error) {
       res.status(401).send({message: error.message});
