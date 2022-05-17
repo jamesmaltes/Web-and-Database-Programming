@@ -2,22 +2,13 @@ import
 { getCurrentReservation, getCurrentUser, setCurrentUser, removeCurrentUser, logout, fetchData } 
 from './main.js'
 
-await fetch('/reservations/getAllReservations').then(function(response) { 
-  // Convert to JSON
-  return response.json();
-}).then(function(R) {
-    var n = JSON.stringify(R.reservation_id);
-      console.log(R);
-})
-
-/*
 let user = getCurrentUser();
 
 if(!user) window.location.href = "login.html";
 
 let profile = document.getElementById("profile");
 profile.innerHTML = `
-  <h2>Welcome, ${user.username}.</h2>
+  <h2>Welcome.</h2>
   <div>
     <p class="error"></p>
     <button class="btn" id="edit">Edit Info</button>
@@ -35,8 +26,8 @@ function editProfile() {
     <form id="form" class="basic-form">
       <p class="error"></p>
       <h2>Edit Profile</h2>
-      <label for="username">Change Username</label>
-      <input type="text" name="username" id="username" placeholder="${user.username}">
+      <label for="username">Change Email Address:</label>
+      <input type="text" name="username" id="username" placeholder="${user.userEmail}">
       <br>
       <input type="submit" value="Submit">
     </form>
@@ -60,12 +51,12 @@ function editProfile() {
 function editAccount(e) {
   e.preventDefault();
 
-  let userName = document.getElementById("username").value;
-  if(userName === user.username) {
+  let userEmail = document.getElementById("username").value;
+  if(userEmail === user.userEmail) {
     let err = "No changes made";
     document.querySelector("#editForm p.error").innerHTML = err;
   } else {
-    fetchData('/users/edit', {userId: user.user_id, userName: userName}, "PUT")
+    fetchData('/users/edit', {userId: user.user_id, userEmail: user.userEmail}, "PUT")
     .then((data) => {
       if(!data.message) {
         removeCurrentUser();
@@ -100,5 +91,3 @@ function deleteAccount() {
     })
   }
 }
-
-*/

@@ -32,6 +32,7 @@ if(getCurrentUser()) {
   nav.innerHTML = `
   <ul>
     <li><a href="home.html">Home</a></li>
+    <li><a href="profile.html">Profile</a></li>
     <li><a id="logout">Logout</a></li>
     <li><a href="reservation.html">Reserve a Spot</a></li>
   </ul>

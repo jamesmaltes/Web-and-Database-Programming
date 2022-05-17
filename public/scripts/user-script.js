@@ -15,7 +15,7 @@ function login(e) {
   .then((data) => { //cathy@gmail.com, 12345
     if(!data.message) {
       setCurrentUser(data);
-      window.location.href = "reservation.html";
+      window.location.href = "profile.html";
     }
   })
   .catch((error) => {

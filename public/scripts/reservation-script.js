@@ -1,5 +1,5 @@
 import 
-{ fetchData, getCurrentUser, getCurrentReservation, setCurrentReservation, removeCurrentReservation } 
+{ fetchData, getCurrentUser, getCurrentReservation, removeCurrentReservation } 
 from './main.js'
 
 
@@ -31,3 +31,21 @@ function reserve(e) {
 //labelForm.style.visibility = "visible";
 
 };
+
+function deleteReservation() {
+    if(confirm('Are you sure you want to delete your reservation?')) {
+      fetchData('/reservation/delete', {reservationId: getCurrentReservation().reservation_id}, "DELETE")
+      .then((data) => {
+        if(!data.message) {
+          console.log(data.success)
+          logout();
+          window.location.href = "reservation.html"
+        }
+      })
+      .catch((error) => {
+        const errText = error.message;
+        document.querySelector("#profile div p.error").innerHTML = errText;
+        console.log(`Error! ${errText}`)
+      })
+    }
+  }
