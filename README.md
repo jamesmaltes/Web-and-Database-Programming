@@ -32,8 +32,24 @@ Node.js, Express.js were used along with mySQL for database management and retri
 </pre>
 
 **<h1>Final ERD Screenshot:</h1>**
-![Image]()
+![WebFinalERD](https://user-images.githubusercontent.com/102160505/168905548-89931bee-d6b4-4522-9f0c-8013fb4d8394.PNG)
 
+**<h3>Updated Business Rules:</h3>**
+<USER> <may> <Submit> <one> <RESERVATION>\
+<RESERVATION> <must> <Be Submitted By> <one> <USER>\
+  
+<USER> <may> <Create> <any number> <MESSAGE>\
+<MESSAGE> <must> <Be Created By> <one> <USER>\
+
+<USER> <may> <Create> <any number> <COMMENT>\
+<COMMENT> <must> <Be Created By> <one> <USER>\  
+
+<RESERVATION> <may> <Request> <one> <CHAMBER>\
+<CHAMBER> <must> <Be Requested By> <one> <RESERVATION>\
+
+<COMPANY> <may> <Supply> <any number> <CHAMBER>\
+<CHAMBER> <must> <Be Supplied By> <one> <COMPANY>\
+  
 <pre>
 </pre>
 
