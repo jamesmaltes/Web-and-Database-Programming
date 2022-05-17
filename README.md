@@ -4,14 +4,14 @@ For my project in Web and Database Programming, I want to make a website based o
 
 I have decided to change the app to create a "reservation" as a sort of log to indicate that a person wishes to encapsulate themselves after death.  
 
-This person has to have a profile before they can create a reseration.
+This person has to have a profile before they can create a reservation.
 
 Family and friends may log back into the initial account to write "messages" on this reservation to this person in the hopes that if they are revived somewhere down the line, they may be able to view the messages.
 <pre>
 </pre>
 
 **<h1>Current Bugs / Issues:</h1>**
-If a profile is attemped to be deleted before all reservations and messages are deleted, there will be an error due to the child rows (reservations, labels) in SQL referencing the parent row (users).
+If a profile is attemped to be deleted before all reservations and messages are deleted, there will be an error due to the child rows (reservations, labels) in mySQL referencing the parent row (users).
 
 Every time the link "Reserve a Slot" is pressed no matter if the user has a reservation already, they will be taken to "reservation.html".  They must click on "reserve now:" again in order to view the messages if they leave the "labels.html" page.
 
@@ -38,25 +38,25 @@ Node.js, Express.js were used along with mySQL for database management and retri
 </pre>
 
 **<h1>Steps to get website to work:</h1>**
-**<h3>In VSCode Terminal type:</h3>**\
+**<h3>In VSCode Terminal type:</h3>**
 npm install express\
 npm install dotenv\
 npm install mysql2
 
-**<h3>Create a .env file with the following content:</h3>**\
+**<h3>Create a .env file with the following content:</h3>**
 MYSQL_HOST = "localhost"\
 MYSQL_USERNAME = "your_username"\
 MYSQL_PSWD = "your_password"\
 MYSQL_DB = "database_name"
 
-**<h3>In MySQL Command Client type:</h3>**\
+**<h3>In MySQL Command Client type:</h3>**
 CREATE DATABASE database_name;\
 USE database_name;
 
-**<h3>In VSCode Terminal type:</h3>**\
+**<h3>In VSCode Terminal type:</h3>**
 npm run dev
 
-**<h3>In Browser:</h3>**\
+**<h3>In Browser:</h3>**
 Type in "localhost" and press enter.  Website should start up at the home page (home.html).
 
 <pre>
