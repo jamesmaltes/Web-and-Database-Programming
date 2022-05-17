@@ -118,7 +118,7 @@ Type in "localhost" and press enter.  Website should start up at the home page (
 **<h3>Profile page once "Edit Info" is clicked:</h3>**
 ![cryoedit](https://user-images.githubusercontent.com/102160505/168895082-c8d0d01e-5fe2-42a0-8e84-19768aedb1ce.PNG)
 
-**<h3>Profile page once "Edit Info" is clicked:</h3>**
+**<h3>Profile page once "Delete Account" is clicked:</h3>**
 ![cryodelete](https://user-images.githubusercontent.com/102160505/168895441-94857dd4-903a-4abc-ad87-30c20b412591.PNG)
 
 
@@ -132,7 +132,7 @@ Type in "localhost" and press enter.  Website should start up at the home page (
 <pre>
 </pre>
 
-**<h3>Page for adding messages:</h3>**
+**<h3>Page for adding messages (accessed after "Reserve now" is clicked on reservation.html):</h3>**
 ![cryolabel](https://user-images.githubusercontent.com/102160505/168895122-350ebc57-dcc4-4d45-a3c8-8b0e7a547967.PNG)
 
 
