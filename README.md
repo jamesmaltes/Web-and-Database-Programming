@@ -38,25 +38,25 @@ Node.js, Express.js were used along with mySQL for database management and retri
 </pre>
 
 **<h1>Steps to get website to work:</h1>**
-**In VSCode Terminal:**
+**In VSCode Terminal type:**\
 npm install express\
 npm install dotenv\
-npm install mysql2\
+npm install mysql2
 
-**Create a .env file with the following content:**
+**Create a .env file with the following content:**\
 MYSQL_HOST = "localhost"\
 MYSQL_USERNAME = "your_username"\
 MYSQL_PSWD = "your_password"\
 MYSQL_DB = "database_name"
 
-**In MySQL Command Client:**
+**In MySQL Command Client type:**\
 CREATE DATABASE database_name;\
-USE database_name;\
+USE database_name;
 
-**In VSCode Terminal:**
+**In VSCode Terminal type:**\
 npm run dev
 
-**In Browser:**
+**In Browser:**\
 Type in "localhost" and press enter.  Website should start up at the home page (home.html).
 
 <pre>
