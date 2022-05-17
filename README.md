@@ -62,8 +62,15 @@ Node.js, Express.js were used along with mySQL for database management and retri
 </pre>
 
 **<h1>Steps to get website to work:</h1>**
+
+**<h3>Make sure you have both Node.js and mySQL downloaded and installed, with a username and password set for mySQL once it is installed.  These can be accessed from the following sites:</h3>**
+Node.js: https://nodejs.dev/ \
+mySQL: https://dev.mysql.com/downloads/mysql/ \
+
 **<h3>In VSCode Terminal type:</h3>**
+npm init\
 npm install express\
+npm install nodemon --save -dev\
 npm install dotenv\
 npm install mysql2
 
@@ -73,7 +80,8 @@ MYSQL_USERNAME = "your_username"\
 MYSQL_PSWD = "your_password"\
 MYSQL_DB = "database_name"
 
-**<h3>In MySQL Command Client type:</h3>**
+**<h3>In MySQL Command Line Client type:</h3>**
+your_password\
 CREATE DATABASE database_name;\
 USE database_name;
 
