@@ -65,7 +65,7 @@ Node.js, Express.js were used along with mySQL for database management and retri
 
 **<h3>Make sure you have both Node.js and mySQL downloaded and installed, with a username and password set for mySQL once it is installed.  These can be accessed from the following sites:</h3>**
 Node.js: https://nodejs.dev/ \
-mySQL: https://dev.mysql.com/downloads/mysql/ \
+mySQL: https://dev.mysql.com/downloads/mysql/
 
 **<h3>In VSCode Terminal type:</h3>**
 npm init\
